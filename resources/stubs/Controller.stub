@@ -1,0 +1,95 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\{{modelName}};
+use Illuminate\Http\Request;
+use Validator;
+use Maatwebsite\Excel\Facades\Excel;
+
+class {{modelName}}Controller extends Controller
+{
+    public function index(Request $request)
+    {
+        $search = $request->get('search');
+        ${{modelNamePluralLowerCase}} = {{modelName}}::where(function ($query) use ($search) {
+            $query@SEARCHABLE_COLUMNS@
+        })->orderBy('id', 'desc')->paginate(10);
+
+        return view('{{modelNamePluralLowerCase}}.index', compact('{{modelNamePluralLowerCase}}', 'search'),['namaTabel' => '{{modelName}}']);
+    }
+
+    public function create()
+    {
+        return view('{{modelNamePluralLowerCase}}.create', ['namaTabel' => '{{modelName}}']);
+    }
+
+    public function store(Request $request)
+    {
+        $validator = Validator::make($request->all(), {{validationRules}}
+        );
+        
+        if ($validator->fails()) 
+            return redirect()->back()->withInput()->withErrors($validator);
+        
+        @dataToDB@
+        
+        {{modelName}}::create($data);
+
+        return redirect()->route('{{modelNamePluralLowerCase}}.index');
+    }
+
+    public function show($id)
+    {
+        ${{modelName}} = {{modelName}}::find($id);
+        return view('{{modelNamePluralLowerCase}}.show', compact('{{modelName}}'));
+    }
+
+    public function edit($id)
+    {
+        ${{modelName}} = {{modelName}}::find($id);
+        return view('{{modelNamePluralLowerCase}}.edit', compact('{{modelName}}'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validator = Validator::make($request->all(), {{validationRules}});
+        
+        if ($validator->fails()) 
+            return redirect()->back()->withInput()->withErrors($validator);
+        
+
+        @dataToDB@
+
+        {{modelName}}::whereId($id)->update($data);
+
+        return redirect()->route('{{modelNamePluralLowerCase}}.index');
+    }
+
+    public function destroy($id)
+    {
+        
+        try {
+                    $data = {{modelName}}::find($id);
+                if($data) {
+                    # code...
+                    $data->delete();
+                }
+                return redirect()->route('{{modelNamePluralLowerCase}}.index')->with('success', 'Data berhasil dihapus.');
+            } catch (\Illuminate\Database\QueryException $e) {
+                // Cek apakah error adalah error foreign key constraint
+                if ($e->errorInfo[1] == 1451) {
+                    // Redirect dengan pesan error
+                    return redirect()->back()->with('error', 'Proses delete gagal. Tidak diizinkan karena ada data terkait.');
+                }
+        
+                // Handle error lain
+                return redirect()->back()->with('error', 'Terjadi kesalahan. Silakan coba lagi.');
+            }
+    }
+
+    public function export()
+    {
+        return Excel::download(new {{modelName}}Export, '{{modelNamePluralLowerCase}}.xlsx');
+    }
+}

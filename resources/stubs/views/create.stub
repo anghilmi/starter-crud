@@ -1,0 +1,19 @@
+@extends('layouts.main')
+
+@section('content')
+<div class="content-wrapper">
+    <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Tambah {{ ucfirst('{{modelName}}') }}</h2>
+            <form action="{{ route('{{modelNamePluralLowerCase}}.store') }}" method="POST">
+                @csrf
+                {{formFieldsCreate}}
+                <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+                <a href="{{ route('{{modelNamePluralLowerCase}}.index') }}" class="btn btn-secondary mt-3">Kembali</a>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+@endsection
