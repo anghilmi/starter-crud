@@ -1,18 +1,14 @@
+<div align="center">
+
 # Algoritmia Starter CRUD Generator
 
-<div align="center">
-  <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel Logo" width="100" />
-  <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" width="100" />
-  <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png" alt="Bootstrap Logo" width="100" />
-</div>
+<img src="https://laravel.com/img/logomark.min.svg" alt="Laravel Logo" width="100" />
+<img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" width="100" />
+<img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png" alt="Bootstrap Logo" width="100" />
 
-<div align="center">
-  <a href="https://github.com/anghilmi/starter-crud-generator/releases">
-    <img src="https://img.shields.io/github/downloads/anghilmi/starter-crud-generator/total?label=Downloads" alt="GitHub all releases" />
-  </a>
-  <a href="https://opensource.org/licenses/MIT">
-    <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" />
-  </a>
+[![GitHub all releases](https://img.shields.io/github/downloads/anghilmi/starter-crud-generator/total?label=Downloads)](https://github.com/anghilmi/starter-crud-generator/releases)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 </div>
 
 ---
