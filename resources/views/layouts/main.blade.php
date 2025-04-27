@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Klinik</title>
+  <title>Algoritmia CRUD</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href={{asset("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback")}}>
@@ -69,17 +69,17 @@
           <span class="dropdown-item dropdown-header">15 Data Hari Ini</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-inbox mr-2"></i> 4 Daftar Mandiri
+            <i class="fas fa-inbox mr-2"></i> 4 Notifikasi
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-stethoscope mr-2"></i> 8 Periksa Hari Ini
+            <i class="fas fa-stethoscope mr-2"></i> 8 Notifikasi
             <span class="float-right text-muted text-sm">12 hours</span>
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 67
+            <i class="fas fa-users mr-2"></i> 67 Notifikasi
             <span class="float-right text-muted text-sm">2 days</span>
           </a>
           <div class="dropdown-divider"></div>
@@ -89,30 +89,6 @@
 
       <!-- Inside your Blade template -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-    // Your JS code here
-    function fetchNotificationCounts() {
-    $.ajax({
-        url: '/notifications/counts',
-        method: 'GET',
-        success: function(data) {
-            $('.navbar-badge').text(data.daftarMandiri + data.periksaHariIni + data.pasienBaru);
-            $('.dropdown-header').text(data.daftarMandiri + data.periksaHariIni + data.pasienBaru + ' Total Data Hari Ini');
-            $('.dropdown-item:eq(1)').text(data.daftarMandiri + ' Daftar Mandiri');
-            $('.dropdown-item:eq(2)').text(data.periksaHariIni + ' Periksa Hari Ini');
-            $('.dropdown-item:eq(3)').text( data.pasienBaru + ' Pasien Baru');
-        }
-    });
-}
-
-// Call the function every 30 seconds
-setInterval(fetchNotificationCounts, 5000);
-
-// Initial call
-fetchNotificationCounts();
-
-</script>
-
 
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
@@ -137,9 +113,9 @@ fetchNotificationCounts();
             <span class="float-right text-muted text-sm">2 days</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a> --}}
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a> 
         </div>
-      </li>
+      </li>--}}
       {{-- <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
@@ -160,7 +136,7 @@ fetchNotificationCounts();
     <a href="#" class="brand-link">
       {{-- <img src={{asset("adminlte/dist/img/AdminLTELogo.png")}} alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
       {{-- <span class="brand-text font-weight-light">Klinik Pratama Kusuma Medika</span> --}}
-      <span class="badge badge-primary">Klinik Pratama Kusuma Medika</span>
+      <span class="badge badge-primary">Algoritmia CRUD</span>
 
     </a>
 
@@ -198,7 +174,7 @@ fetchNotificationCounts();
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-inbox"></i>
               <p>
-                Pendaftaran Mandiri
+                Menu 1
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
@@ -207,7 +183,7 @@ fetchNotificationCounts();
             <a href="#" class="nav-link">
               <i class="nav-icon fa fa-stethoscope"></i>
               <p>
-                Pasien
+                Menu 2
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
@@ -217,7 +193,7 @@ fetchNotificationCounts();
               <i class="nav-icon fa fa-users" aria-hidden="true"></i>
 
               <p>
-                Pegawai
+                Menu 3
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
@@ -227,7 +203,7 @@ fetchNotificationCounts();
               <i class="nav-icon fa fa-calendar" aria-hidden="true"></i>
 
               <p>
-                Data Hari Libur
+                Menu 4
                 {{-- <span class="right badge badge-danger">New</span> --}}
               </p>
             </a>
