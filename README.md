@@ -1,19 +1,21 @@
 <div align="center">
 
-# Algoritmia Starter CRUD Generator
+# Algoritmia.id Starter CRUD Generator
 
 <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel Logo" width="100" />
 <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" width="100" />
 <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-social-logo.png" alt="Bootstrap Logo" width="100" />
 
-[![GitHub all releases](https://img.shields.io/github/downloads/anghilmi/starter-crud-generator/total?label=Downloads)](https://github.com/anghilmi/starter-crud-generator/releases)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![GitHub all releases](https://img.shields.io/github/downloads/anghilmi/starter-crud/total?label=Downloads)](https://github.com/anghilmi/starter-crud/releases)  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 </div>
 
 ---
+A powerful CRUD generator for Laravel 12 with AdminLTE Bootstrap 4 integration. Build your application faster with automatic generation of controllers, models, views, and routes.
 
 ## Fitur
+
+
 
 - **Generate CRUD dari tabel di database** (tanpa/dengan migration).
 - **Controller otomatis**: Semua kolom pada tabel dianggap searchable.
@@ -85,10 +87,10 @@
 ## Keep in Touch
 
 <div align="center">
-  <a href="https://t.me/starter_crud_generator">
+  <a href="#">
     <img src="https://img.shields.io/badge/Telegram-blue?logo=telegram" alt="Telegram" />
   </a>
-  <a href="https://chat.whatsapp.com/starter-crud-generator">
+  <a href="https://chat.whatsapp.com/FH7MOyMRlLFCClYjrS83pB">
     <img src="https://img.shields.io/badge/WhatsApp-green?logo=whatsapp" alt="WhatsApp" />
   </a>
 </div>
