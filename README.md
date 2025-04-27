@@ -87,10 +87,11 @@ A powerful CRUD generator for Laravel 12 with AdminLTE Bootstrap 4 integration. 
 ## Keep in Touch
 
 <div align="center">
+  
+  <a href="https://chat.whatsapp.com/FH7MOyMRlLFCClYjrS83pB">
+    <img src="https://img.shields.io/badge/WhatsApp-green?logo=whatsapp" alt="Algoritmia WhatsApp Group" />
+  </a>
   <a href="#">
     <img src="https://img.shields.io/badge/Telegram-blue?logo=telegram" alt="Telegram" />
-  </a>
-  <a href="https://chat.whatsapp.com/FH7MOyMRlLFCClYjrS83pB">
-    <img src="https://img.shields.io/badge/WhatsApp-green?logo=whatsapp" alt="WhatsApp" />
   </a>
 </div>
