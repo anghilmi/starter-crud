@@ -143,24 +143,36 @@ protected function generateFormFieldsEdit($name)
     }
 
     protected function generateRoutes($name)
-{
-    $routeTemplate = "\nRoute::resource('{{modelNamePluralLowerCase}}', App\Http\Controllers\{{modelName}}Controller::class);";
-    $routeTemplate = str_replace(
-        ['{{modelName}}', '{{modelNamePluralLowerCase}}'],
-        [$name, strtolower(\Illuminate\Support\Str::plural($name))],
-        $routeTemplate
-    );
-
-    $routesPath = base_path('routes/web.php');
-    $routesContent = file_get_contents($routesPath);
-
-    // Mengecek apakah route sudah ada
-    if (!str_contains($routesContent, $routeTemplate)) {
-        File::append($routesPath, $routeTemplate);
-    } else {
-        // $this->info("Route for {$name} already exists!");
+    {
+        $controllerName = $name . 'Controller';
+        $modelNamePlural = \Illuminate\Support\Str::plural(strtolower($name));
+        $modelNameSingularLower = strtolower($name);
+    
+        $routeTemplate = <<<EOT
+    
+    // Start {$controllerName} Routes
+    Route::get('/{$modelNamePlural}', [App\Http\Controllers\\{$controllerName}::class, 'index'])->name('{$modelNamePlural}.index');
+    Route::get('/{$modelNamePlural}/create', [App\Http\Controllers\\{$controllerName}::class, 'create'])->name('{$modelNamePlural}.create');
+    Route::post('/{$modelNamePlural}', [App\Http\Controllers\\{$controllerName}::class, 'store'])->name('{$modelNamePlural}.store');
+    Route::get('/{$modelNamePlural}/{{$modelNameSingularLower}}', [App\Http\Controllers\\{$controllerName}::class, 'show'])->name('{$modelNamePlural}.show');
+    Route::get('/{$modelNamePlural}/{{$modelNameSingularLower}}/edit', [App\Http\Controllers\\{$controllerName}::class, 'edit'])->name('{$modelNamePlural}.edit');
+    Route::put('/{$modelNamePlural}/{{$modelNameSingularLower}}', [App\Http\Controllers\\{$controllerName}::class, 'update'])->name('{$modelNamePlural}.update');
+    Route::delete('/{$modelNamePlural}/{{$modelNameSingularLower}}', [App\Http\Controllers\\{$controllerName}::class, 'destroy'])->name('{$modelNamePlural}.destroy');
+    // End {$controllerName} Routes
+    
+    EOT;
+    
+        $routesPath = base_path('routes/web.php');
+        $routesContent = file_get_contents($routesPath);
+    
+        // Cek apakah sudah ada
+        if (!str_contains($routesContent, "Start {$controllerName} Routes")) {
+            File::append($routesPath, $routeTemplate);
+        } else {
+            // $this->info("Routes for {$controllerName} already exist!");
+        }
     }
-}
+    
 
 
     protected function updateSidebar($name)
