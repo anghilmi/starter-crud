@@ -11,7 +11,7 @@
 </div>
 
 ---
-A powerful CRUD generator for Laravel 12 with AdminLTE Bootstrap 4 integration. Build your application faster with automatic generation of controllers, models, views, and routes.
+A powerful CRUD generator for Laravel 12 with AdminLTE 3 and Bootstrap 4 integration. Build your application faster with automatic generation of controllers, models, views, and routes.
 
 ## Fitur
 
