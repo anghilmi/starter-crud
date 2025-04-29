@@ -28,6 +28,8 @@ A powerful CRUD generator for Laravel 12 with AdminLTE 3 and Bootstrap 4 integra
 
 ---
 
+<img src="https://github.com/anghilmi/starter-crud/blob/main/public/algoritmia%20id%20crud.png" alt="screenshot" />
+
 ## Cara Pakai
 
 1. **Clone Repository**  
